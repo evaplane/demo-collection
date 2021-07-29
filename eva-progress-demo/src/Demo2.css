@@ -1,0 +1,44 @@
+@keyframes play {
+	0% {
+		transform: translateX(-50%) scaleX(0);
+	}
+	to {
+		/* width: 100%; */
+		transform: translateX(0) scaleX(1);
+	}
+}
+
+@keyframes replay {
+	0% {
+		transform: translateX(-50%) scaleX(0);
+	}
+	to {
+		/* width: 100%; */
+		transform: translateX(0) scaleX(1);
+	}
+}
+
+.container {
+	height: 10px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+/* animation-timing-function规定动画的速度曲线 linear表示匀速 */
+.progress {
+	height: 100%;
+	/* width: 0; */
+	width: 100%; /* 初始宽度为100%，我们要对其缩放 */
+	will-change: transform; /* 通过will-change告知浏览器提前做好优化准备 */
+	background-color: red;
+	animation-timing-function: linear;
+}
+
+/* 规定动画暂停还是播放 */
+.progress.play{
+	animation-play-state: running;
+}
+
+.progress.pause{
+	animation-play-state: paused;
+}
